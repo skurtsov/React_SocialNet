@@ -1,0 +1,12 @@
+.item a{
+    color:#fff;
+}
+a.item {
+  color:#fff;
+}
+nav.sidebar {
+    background-color: #f00;
+  }
+a.activeL{
+    color: gold;
+  }

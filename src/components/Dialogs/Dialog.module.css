@@ -1,0 +1,34 @@
+.item{
+  color: #000;
+}
+.content {
+  background-color: #005fff;
+}
+
+.obloj img {
+  width: 100%;
+  /* position: relative; */
+  height: 286px;
+  object-fit: cover;
+}
+.ava img {
+  width: 245px;
+  margin: 10px;
+}
+.ava_post img{
+  width: 100px;
+  border-radius: 100px;
+}
+.dialogContainer{
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+}
+.dialogs,  .messages{
+  padding: 10px;
+}
+.dialogItem{
+  color: #fff;
+}
+.dialogActive{
+  color: gold !important;
+}

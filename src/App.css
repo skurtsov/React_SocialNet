@@ -15,26 +15,15 @@
 .sidebar {
   grid-area: nav;
 }
-.content {
-  grid-area: content;
-}
+
 header.header {
   background-color: #00b924;
 }
-
-nav.sidebar {
-  background-color: #f00;
-}
-.content {
+.app-content {
   background-color: #005fff;
+  grid-area: content;
 }
-.obloj img {
-  width: 100%;
-  /* position: relative; */
-  height: 286px;
-  object-fit: cover;
-}
-.ava img {
-  width: 245px;
-  margin: 10px;
+
+.hello{
+  color:lawngreen !important;
 }
