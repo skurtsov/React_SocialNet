@@ -26,7 +26,7 @@
 .dialogs,  .messages{
   padding: 10px;
 }
-.dialogItem{
+.dialogItem a{
   color: #fff;
 }
 .dialogActive{

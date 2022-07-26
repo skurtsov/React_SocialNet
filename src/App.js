@@ -7,7 +7,8 @@ import Dialog from './components/Dialogs/Dialog';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Content from './components/Profile/Content';
 
-const App = () => {
+const App = (props) => {
+  //props.addPost("hello");
   return (
     
     <BrowserRouter>
@@ -16,9 +17,9 @@ const App = () => {
   <Sidebar/>
   <div class="app-content">
     <Routes>
-    <Route path="/" element={<Content/>}/>
-    <Route path="/profile" element={<Content/>}/>
-    <Route path="/dialog" element={<Dialog/>}/>
+    <Route path="/"   element={<Content addPost={props.addPost} posts={props.posts} />}/>
+    <Route path="/profile" element={<Content addPost={props.addPost} posts={props.posts}/>}/>
+    <Route path="/dialog/*" element={<Dialog messages={props.messages}/>}/>
     </Routes>
   </div>
 </div>

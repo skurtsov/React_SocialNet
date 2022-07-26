@@ -1,22 +1,36 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import clc from './Dialog.module.css';
+import Message from "./Messages/Messages";
 
-const Dialog =() =>{
+const Chat = (props) =>{
+    let path = "/dialog/"+props.id;
 
+    return(
+        <div className={clc.dialogItem + ' ' + clc.dialogActive}>
+                <NavLink to={path} >{props.name}</NavLink>
+                </div>
+    );
+}
+const Dialog =(props) =>{
+
+    let dialogs_arr = props.messages.map((el)=>{
+        return <Chat name={el.name} id={el.id}/>
+    });
     return(
     <div className={clc.dialogContainer}>
         <div className={clc.dialogs}>
-                <div className={clc.dialogItem + ' ' + clc.dialogActive}>Игорь</div>
-                <div className={clc.dialogItem}>Ваня</div>
-                <div className={clc.dialogItem}>Жора</div>
-                <div className={clc.dialogItem}> Гуф</div>
+            {dialogs_arr}
+
+                
+                
+       
     </div>
     <div className={clc.messages}>
-        <div className={clc.messegeItem}>Привет</div>
-        <div className={clc.messegeItem}>Как дела</div>
-        <div className={clc.messegeItem}>Все гуд, а ты</div>
-        <div className={clc.messegeItem}>Норм</div>
-    </div>
+        <Message message="Hello"/>
+        <Message message="Hello"/>
+        <Message message="How are you?"/>
+   </div>
 </div>
     );
 }

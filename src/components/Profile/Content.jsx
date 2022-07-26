@@ -1,13 +1,24 @@
-import React from "react";
+import React, { useRef ,useEffect} from 'react';
 import clc from './Content.module.css';
 import Post from "./Post";
 
-const Content =() =>{
-    //Post generating
-    // const rows = [];
-    // for (var i = 0; i < 10; i++) {
-    //     rows.push(<Post id={i} />);
-    // }
+const Content =(props) =>{
+   let test = props.posts;
+
+const posts_all = props.posts.map((el)=>{
+    console.log('postname', el.post)
+    return <Post id={el.id} message={el.post}/>
+})
+    const  nameRef = React.useRef(null);
+    
+    let MakePost =()=>{
+      
+    let q = nameRef.current.value;
+    props.addPost(q);
+    console.log("new-comp" , props.posts)
+      //  alert(txtval);
+    }
+
     return(
         <div>
         <div  className={clc.obloj}><img src="https://i.pinimg.com/736x/98/b9/52/98b952001792e2b836669abf4d853712.jpg" alt=""/></div>
@@ -15,11 +26,10 @@ const Content =() =>{
     <div  >Name+desc</div>
     <div>My posts
         <div >New post</div>
+        <textarea ref={nameRef} ></textarea>
+        <button onClick={MakePost}>Ok</button>
 
-        <Post/>
-        <Post id="1" />
-        <Post id="2" />
-        <Post id="3" />
+        {posts_all}
     </div></div>
     );
 }
